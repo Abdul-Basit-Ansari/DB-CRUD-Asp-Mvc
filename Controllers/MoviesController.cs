@@ -135,7 +135,6 @@ namespace MvcMovie.Controllers
 
             return View(movie);
         }
-
         // POST: Movies/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -154,7 +153,6 @@ namespace MvcMovie.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
         private bool MovieExists(int id)
         {
           return (_context.Movie?.Any(e => e.Id == id)).GetValueOrDefault();
